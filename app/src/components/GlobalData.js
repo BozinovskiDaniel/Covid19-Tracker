@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles({
   root: {},
   globalData: {
-    margin: "0 50px 20px 50px",
+    margin: "0 50px 50px 50px",
   },
   totalItem1: {
     backgroundColor: "#fff",
@@ -38,7 +38,9 @@ const useStyles = makeStyles({
 
 function GlobalData(props) {
   const classes = useStyles();
-
+  {
+    console.log(props.date);
+  }
   return (
     <div className={classes.globalData}>
       <Grid container spacing={4}>

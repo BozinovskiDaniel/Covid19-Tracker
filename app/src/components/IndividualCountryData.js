@@ -22,6 +22,7 @@ function IndividualCountryData(props) {
   const [totalConfirmed, setTotalConfirmed] = useState(null);
   const [totalRecovered, setTotalRecovered] = useState(null);
   const [totalDeaths, setTotalDeaths] = useState(null);
+  const [date, setDate] = useState(null);
 
   const classes = useStyles();
   useEffect(() => {
@@ -40,7 +41,7 @@ function IndividualCountryData(props) {
           };
           array.push(newObj);
         });
-
+        setDate(array[array.length - 1].name);
         setTotalConfirmed(array[array.length - 1].confirmed);
         setTotalRecovered(array[array.length - 1].recovered);
         setTotalDeaths(array[array.length - 1].deaths);
@@ -55,6 +56,7 @@ function IndividualCountryData(props) {
         {props.name}
       </Typography>
       <GlobalData
+        date={date}
         totalConfirmed={totalConfirmed}
         totalRecovered={totalRecovered}
         totalDeaths={totalDeaths}

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CountryTableData from "./CountryTableData";
 import GraphData from "./GraphData";
 import GlobalData from "./GlobalData";
+import TableData from "./TableData";
 
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
   root: {},
@@ -19,8 +17,12 @@ const useStyles = makeStyles({
     borderRadius: 10,
     padding: 10,
   },
-  graphDataContainer: {
-    padding: "200px 0px",
+  table: {
+    marginTop: 15,
+  },
+  textField: {
+    width: "50%",
+    marginTop: 25,
   },
 });
 
@@ -57,7 +59,11 @@ function CovidData(props) {
         totalDeaths={totalDeaths}
       />
       <GraphData data={data} className={classes.graphDataContainer} />
-      <CountryTableData data={countryData} />
+      {countryData ? (
+        <div className={classes.table}>
+          <TableData data={countryData} className={classes.table} />
+        </div>
+      ) : null}
     </div>
   );
 }
