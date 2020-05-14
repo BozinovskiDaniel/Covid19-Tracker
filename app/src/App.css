@@ -4,7 +4,11 @@ body {
 }
 
 .homeContainer {
-  margin: 90px 40px 0 40px;
+  margin: 90px 60px 0 60px;
+}
+
+.individualCountryContainer {
+  margin: 90px 60px 0 60px;
 }
 
 td,

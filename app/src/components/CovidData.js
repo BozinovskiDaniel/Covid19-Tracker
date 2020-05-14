@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CountryTableData from "./CountryTableData";
 import GraphData from "./GraphData";
+import GlobalData from "./GlobalData";
 
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,6 +19,9 @@ const useStyles = makeStyles({
     borderRadius: 10,
     padding: 10,
   },
+  graphDataContainer: {
+    padding: "200px 0px",
+  },
 });
 
 function CovidData(props) {
@@ -26,6 +30,10 @@ function CovidData(props) {
   const [totalRecovered, setTotalRecovered] = useState(null);
   const [totalDeaths, setTotalDeaths] = useState(null);
   const [countryData, setCountryData] = useState(null);
+  const data = [
+    { name: "01/01/2020", uv: 400 },
+    { name: "02/02/2020", uv: 500 },
+  ];
 
   useEffect(() => {
     axios
@@ -42,30 +50,12 @@ function CovidData(props) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.globalData}>
-        <Grid container spacing={1}>
-          <Grid item sm={4} className={classes.totalItem}>
-            <Typography variant="h6">
-              Total Confirmed Cases: <br />
-              {totalConfirmed ? totalConfirmed : null}
-            </Typography>
-          </Grid>
-          <Grid item sm={4}>
-            <Typography variant="h6" className={classes.totalItem}>
-              Total Recovered Cases: <br />
-              {totalRecovered ? totalRecovered : null}
-            </Typography>
-          </Grid>
-          <Grid item sm={4}>
-            <Typography variant="h6" className={classes.totalItem}>
-              Total Death Cases: <br />
-              {totalDeaths ? totalDeaths : null}
-            </Typography>
-          </Grid>
-        </Grid>
-      </div>
-
-      <GraphData />
+      <GlobalData
+        totalConfirmed={totalConfirmed}
+        totalRecovered={totalRecovered}
+        totalDeaths={totalDeaths}
+      />
+      <GraphData data={data} className={classes.graphDataContainer} />
       <CountryTableData data={countryData} />
     </div>
   );

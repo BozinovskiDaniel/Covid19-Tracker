@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
@@ -37,9 +38,13 @@ function Navbar() {
           >
             <MenuIcon />
           </IconButton>
+
           <Typography variant="h4" className={classes.title}>
-            Covid 19 Tracker
+            <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
+              Covid 19 Tracker
+            </Link>
           </Typography>
+
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
