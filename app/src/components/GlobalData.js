@@ -14,18 +14,21 @@ const useStyles = makeStyles({
     backgroundColor: "#fff",
     borderRadius: 10,
     padding: 10,
+    margin: "5px 10px",
     borderBottom: "10px solid #8884d8",
   },
   totalItem2: {
     backgroundColor: "#fff",
     borderRadius: 10,
     padding: 10,
+    margin: "5px 10px",
     borderBottom: "10px solid rgba(46, 204, 113, 1)",
   },
   totalItem3: {
     backgroundColor: "#fff",
     borderRadius: 10,
     padding: 10,
+    margin: "5px 10px",
     borderBottom: "10px solid #ff726f",
   },
   graphDataContainer: {
@@ -38,9 +41,7 @@ const useStyles = makeStyles({
 
 function GlobalData(props) {
   const classes = useStyles();
-  {
-    console.log(props.date);
-  }
+
   return (
     <div className={classes.globalData}>
       <Grid container spacing={4}>

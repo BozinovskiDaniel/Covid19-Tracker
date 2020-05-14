@@ -31,7 +31,6 @@ function TableData(props) {
   });
 
   const myFunction = (event, rowData) => {
-    console.log(rowData);
     window.open(`/country/${rowData.Country}`);
   };
 

@@ -43,6 +43,7 @@ function CovidData(props) {
         setTotalConfirmed(res.data.Global.TotalConfirmed);
         setTotalRecovered(res.data.Global.TotalRecovered);
         setTotalDeaths(res.data.Global.TotalDeaths);
+
         setCountryData(res.data.Countries);
 
         console.log(res.data);

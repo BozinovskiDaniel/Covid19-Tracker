@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../images/thumbnail.png";
 
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,6 +21,17 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     textAlign: "center",
+    fontSize: 40,
+  },
+  img: {
+    height: 40,
+    width: 40,
+    paddingRight: 10,
+  },
+  appbar: {
+    display: "flex",
+    height: "8vh",
+    justifyContent: "center",
   },
 }));
 
@@ -28,7 +40,7 @@ function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" className={classes.appbar}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -39,13 +51,12 @@ function Navbar() {
             <MenuIcon />
           </IconButton>
 
-          <Typography variant="h4" className={classes.title}>
+          <Typography className={classes.title}>
             <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
-              <b>Covid 19 Tracker</b>
+              <img src={logo} className={classes.img} />
+              Covid 19 Tracker
             </Link>
           </Typography>
-
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
