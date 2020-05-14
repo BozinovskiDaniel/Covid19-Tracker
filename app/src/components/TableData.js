@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MaterialTable from "material-table";
 
 function TableData(props) {
-  const [state, setState] = React.useState({
+  const [state] = React.useState({
     columns: [
       { title: "Country", field: "Country" },
       { title: "Total Confirmed", field: "TotalConfirmed", type: "numeric" },

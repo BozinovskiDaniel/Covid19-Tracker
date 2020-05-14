@@ -7,7 +7,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
@@ -24,14 +23,21 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 40,
   },
   img: {
-    height: 40,
-    width: 40,
+    height: 45,
+    width: 45,
     paddingRight: 10,
   },
   appbar: {
     display: "flex",
-    height: "8vh",
+    height: "9vh",
     justifyContent: "center",
+  },
+  link: {
+    textDecoration: "none",
+    color: "#fff",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 
@@ -52,8 +58,8 @@ function Navbar() {
           </IconButton>
 
           <Typography className={classes.title}>
-            <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
-              <img src={logo} className={classes.img} />
+            <Link to="/" className={classes.link}>
+              <img src={logo} className={classes.img} alt="logo" />
               Covid 19 Tracker
             </Link>
           </Typography>

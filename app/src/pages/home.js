@@ -1,8 +1,5 @@
-import React, { Fragment } from "react";
+import React from "react";
 import CovidData from "../components/CovidData.js";
-
-// Material UI
-import Typography from "@material-ui/core/Typography";
 
 function home(props) {
   return (

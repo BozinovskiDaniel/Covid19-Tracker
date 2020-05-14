@@ -1,4 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
+
+// Recharts
 import {
   AreaChart,
   Area,
@@ -10,8 +12,6 @@ import {
 
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
-
-// Recharts
 
 const useStyles = makeStyles({
   root: {
@@ -26,7 +26,7 @@ function GraphData(props) {
     <div className={classes.root}>
       <AreaChart
         width={1200}
-        height={400}
+        height={500}
         data={props.data}
         margin={{
           top: 50,

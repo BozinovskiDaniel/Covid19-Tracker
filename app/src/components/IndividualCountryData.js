@@ -48,7 +48,7 @@ function IndividualCountryData(props) {
         setData(array);
       })
       .catch(() => console.log("error"));
-  }, []);
+  }, [props.name]);
 
   let countryDataMarkup = data ? (
     <Fragment>
