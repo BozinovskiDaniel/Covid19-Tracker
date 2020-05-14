@@ -1,23 +1,25 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(220, 220, 220);
 }
 
 .homeContainer {
-  margin: 90px 60px 0 60px;
+  margin: 110px 200px 0 200px;
+  text-align: center;
 }
 
 .individualCountryContainer {
-  margin: 90px 60px 0 60px;
+  margin: 50px 200px 0 200px;
 }
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid rgb(200, 200, 200);
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #fff;
 }

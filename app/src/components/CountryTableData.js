@@ -43,7 +43,10 @@ function CountryTableData(props) {
         return (
           <tr>
             <td className={classes.countryName}>
-              <Link to={`/country/${country.Country}`}>
+              <Link
+                to={`/country/${country.Country}`}
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
                 <Button variant="contained" color="primary">
                   {country.Country}
                 </Button>

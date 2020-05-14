@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     margin: "0 50px 20px 50px",
   },
   totalItem: {
-    backgroundColor: "#eee",
+    backgroundColor: "#fff",
     borderRadius: 10,
     padding: 10,
   },
@@ -29,20 +29,20 @@ function CovidData(props) {
   const [totalConfirmed, setTotalConfirmed] = useState(null);
   const [totalRecovered, setTotalRecovered] = useState(null);
   const [totalDeaths, setTotalDeaths] = useState(null);
+  const [date, setDate] = useState(null);
   const [countryData, setCountryData] = useState(null);
-  const data = [
-    { name: "01/01/2020", uv: 400 },
-    { name: "02/02/2020", uv: 500 },
-  ];
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
       .get("https://api.covid19api.com/summary")
       .then((res) => {
+        setDate(res.data.Date);
         setTotalConfirmed(res.data.Global.TotalConfirmed);
         setTotalRecovered(res.data.Global.TotalRecovered);
         setTotalDeaths(res.data.Global.TotalDeaths);
         setCountryData(res.data.Countries);
+
         console.log(res.data);
       })
       .catch(() => console.log("error"));
@@ -51,6 +51,7 @@ function CovidData(props) {
   return (
     <div className={classes.root}>
       <GlobalData
+        date={date}
         totalConfirmed={totalConfirmed}
         totalRecovered={totalRecovered}
         totalDeaths={totalDeaths}

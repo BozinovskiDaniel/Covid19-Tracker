@@ -41,7 +41,7 @@ function Navbar() {
 
           <Typography variant="h4" className={classes.title}>
             <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
-              Covid 19 Tracker
+              <b>Covid 19 Tracker</b>
             </Link>
           </Typography>
 
