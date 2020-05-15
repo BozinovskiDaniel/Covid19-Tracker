@@ -14,8 +14,10 @@
     "react-bootstrap-table-next": "^4.0.1",
     "react-bootstrap-table2-toolkit": "^2.1.2",
     "react-dom": "^16.13.1",
+    "react-jvectormap": "0.0.16",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-simple-maps": "^2.0.0",
     "recharts": "^1.8.5",
     "victory": "^34.3.0"
   },
